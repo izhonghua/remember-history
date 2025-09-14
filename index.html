@@ -848,23 +848,8 @@
         
         // 每1分钟自动刷新页面
         setInterval(() => {
-            const configUrl = 'https://izhonghua.github.io/websiteconfig/config.json';
-            fetch(configUrl)
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error(`HTTP错误! 状态: ${response.status}`);
-                    }
-                    return response.json();
-                })
-                .then(config => {
-                    if (config.newWebSite) {
-                        window.location.href = config.newWebSite;
-                    }
-                })
-                .catch(error => {
-                    window.location.reload();
-                });
-        }, 60000); // 60000毫秒 = 1分钟
+            window.location.reload();
+        }, 60000);
     </script>
 </body>
 </html>
